@@ -1,4 +1,40 @@
-html {
-  background: black;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: #212121;
   color: white;
+}
+
+main {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+a {
+  color: white;
+}
+
+label {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+select,
+input {
+  height: 30px;
+}
+
+button {
+  background: white;
+  border: none;
+  padding: 0.5rem 1rem;
 }
