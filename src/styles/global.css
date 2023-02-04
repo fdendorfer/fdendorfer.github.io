@@ -1,4 +1,37 @@
-body {
+body,
+*,
+*::before,
+*::after {
 	font-family: Roboto, OpenSans, sans-serif;
 	margin: 0;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 19px;
+	color: #000000;
+}
+
+.subtitle {
+	font-family: 'Roboto Mono';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+	width: 100%;
+	margin-top: 40px;
+}
+
+.text {
+	margin-top: 40px;
+}
+
+img:not(.icon) {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.icon {
+	width: 30px;
+	cursor: pointer;
 }

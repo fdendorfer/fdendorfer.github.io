@@ -2,11 +2,25 @@
 	<p>Florian Dendorfer</p>
 
 	<div class="icons">
-		<img src="/icons/circle-half-stroke-solid.svg" alt="Switch Theme" />
-		<img src="/icons/instagram.svg" alt="Instagram" />
-		<img src="/icons/github.svg" alt="Github" />
+		<img onclick="switchTheme" src="/icons/circle-half-stroke-solid.svg" alt="Switch Theme" class="icon" />
+		<a href="https://www.instagram.com/lucky_number_flo/"
+			><img src="/icons/instagram.svg" alt="Instagram" class="icon" /></a
+		>
+		<a href="https://github.com/fdendorfer"><img src="/icons/github.svg" alt="Github" class="icon" /></a>
 	</div>
 </header>
+
+<script>
+	function switchTheme() {
+		const theme = document.querySelector('meta[name="theme-color"]')
+
+		if (body. === '#ffffff') {
+			theme.content = '#000000'
+		} else {
+			theme.content = '#ffffff'
+		}
+	}
+</script>
 
 <style>
 	header {
@@ -29,9 +43,5 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 15px;
-	}
-
-	img {
-		width: 30px;
 	}
 </style>

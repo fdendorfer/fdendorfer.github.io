@@ -3,18 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
 <style>
+	.cards {
+		margin-top: 40px;
+		display: grid;
+		gap: 40px;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		width: 100%;
+	}
 	.card {
 		align-items: center;
+		aspect-ratio: 1;
 		background: rgba(0, 0, 0, 0.05);
 		border-radius: 32px;
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 		display: inline-flex;
-		height: 40vw;
 		justify-content: center;
-		margin-bottom: 20px;
-		margin-right: 20px;
 		transition: 0.4s;
-		width: 40vw;
 	}
 
 	.card:hover {
@@ -22,22 +26,30 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.25);
 		color: white;
 	}
+
+	.lowa {
+		background: url('/projects/lowa-square.png') no-repeat center center;
+		background-size: cover;
+	}
 </style>
 
 <BaseLayout title="Florian Dendorfer" description="Welcome to my personal homepage">
 	<section>
-		<p>Welcome to my Personal Homepage:<br />Focusing on Substance Over Style</p>
+		<p class="subtitle">Welcome to my Personal Homepage:<br />Focusing on Substance Over Style</p>
 
 		<!-- Hero image -->
+		<img class="hero" src="/placeholder-hero.png" alt="Hero Image" />
 
-		<p>
+		<p class="text">
 			This is just a small website I made to try out Astro and test myself a little. Don't judge the design, everything
-			was made in one night on January 4, 2023.<br />Below you can find some of my previous work and info about me
+			was made in one night.<br /><br />Below you can find some of my previous work and info about me
 		</p>
 
-		<div class="card">LOWA 360</div>
-		<div class="card">Shagrou</div>
-		<div class="card">Shortk</div>
-		<div class="card">Time Manager</div>
+		<div class="cards">
+			<div class="card lowa">LOWA 360</div>
+			<div class="card">Shagrou</div>
+			<div class="card">Shortk</div>
+			<div class="card">Time Manager</div>
+		</div>
 	</section>
 </BaseLayout>
