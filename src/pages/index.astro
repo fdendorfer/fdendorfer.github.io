@@ -10,26 +10,82 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		width: 100%;
 	}
+
 	.card {
 		align-items: center;
 		aspect-ratio: 1;
-		background: rgba(0, 0, 0, 0.05);
 		border-radius: 32px;
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 4px 10px rgba(var(--color-shadow), 0.25);
 		display: inline-flex;
 		justify-content: center;
 		transition: 0.4s;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
 	}
-
+	.card::after {
+		content: '';
+		background: green;
+		opacity: 0.9;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+	}
 	.card:hover {
-		background: rgba(0, 0, 0, 0.9);
-		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.25);
-		color: white;
+		box-shadow: 0px 4px 10px rgba(var(--color-shadow), 0.5);
+	}
+	.card:hover::after {
+		filter: brightness(0.15);
+		transition: inherit;
 	}
 
-	.lowa {
-		background: url('/projects/lowa-square.png') no-repeat center center;
-		background-size: cover;
+	.card span {
+		font-weight: 900;
+		font-size: 40px;
+		color: #000000aa;
+		line-height: 1;
+		background: none;
+		z-index: 1;
+		transition: filter 0.4s ease;
+	}
+	.card:hover span {
+		width: 100%;
+		filter: brightness(2.5);
+		-webkit-text-fill-color: transparent;
+	}
+
+	.lowa::after {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+	}
+	.lowa:hover span {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+		-webkit-background-clip: text;
+	}
+
+	.shagrou::after {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+	}
+	.shagrou:hover span {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+		-webkit-background-clip: text;
+	}
+
+	.shortk::after {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+	}
+	.shortk:hover span {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+		-webkit-background-clip: text;
+	}
+
+	.time-manager::after {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+	}
+	.time-manager:hover span {
+		background: center / cover url('/projects/lowa-square.png') no-repeat;
+		-webkit-background-clip: text;
 	}
 </style>
 
@@ -46,10 +102,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 		</p>
 
 		<div class="cards">
-			<div class="card lowa">LOWA 360</div>
-			<div class="card">Shagrou</div>
-			<div class="card">Shortk</div>
-			<div class="card">Time Manager</div>
+			<div class="card lowa"><span>LOWA 360</span></div>
+			<div class="card shagrou"><span>Shagrou</span></div>
+			<div class="card shortk"><span>Shortk</span></div>
+			<div class="card time-manager"><span>Time Manager</span></div>
 		</div>
 	</section>
 </BaseLayout>
